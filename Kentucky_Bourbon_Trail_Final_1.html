@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kentucky Bourbon Trail - January 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Bitter:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --amber: #ffbf00;
+            --copper: #b87333;
+            --caramel: #c68e17;
+            --charred-oak: #2e1e0f;
+            --wheat: #f5deb3;
+        }
+        
+        body {
+            font-family: 'Bitter', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f4e8;
+            margin: 0;
+            padding: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBvcGFjaXR5PSIwLjA1Ij4KICAgIDxsaW5lIHgxPSI5MCIgeTE9IjEwMCIgeDI9IjkwIiB5Mj0iMzAwIiBzdHJva2U9InJnYmEoMTAxLDY3LDMzLDAuMSkiIHN0cm9rZS13aWR0aD0iMyIvPgogICAgPGxpbmUgeDE9IjE5MCIgeTE9IjEwMCIgeDI9IjE5MCIgeTI9IjMwMCIgc3Ryb2tlPSJyZ2JhKDEwMSw2NywzMywwLjEpIiBzdHJva2Utd2lkdGg9IjMiLz4KICAgIDxsaW5lIHgxPSIyOTAiIHkxPSIxMDAiIHgyPSIyOTAiIHkyPSIzMDAiIHN0cm9rZT0icmdiYSgxMDEsNjcsMzMsMC4xKSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgICA8bGluZSB4MT0iMzEwIiB5MT0iMTAwIiB4Mj0iMzEwIiB5Mj0iMzAwIiBzdHJva2U9InJnYmEoMTAxLDY3LDMzLDAuMSkiIHN0cm9rZS13aWR0aD0iMyIvPgogIDwvZz4KICA8ZWxsaXBzZSBjeD0iMjAwIiBjeT0iMTMwIiByeD0iMjUwIiByeT0iMTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNjksMTY5LDE2OSwwLjIpIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8ZWxsaXBzZSBjeD0iMjAwIiBjeT0iMjAwIiByeD0iMjUwIiByeT0iMTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNjksMTY5LDE2OSwwLjIpIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8ZWxsaXBzZSBjeD0iMjAwIiBjeT0iMjcwIiByeD0iMjUwIiByeT0iMTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNjksMTY5LDE2OSwwLjIpIiBzdHJva2Utd2lkdGg9IjYiLz4KPC9zdmc+');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            position: relative;
+            padding: 30px 20px;
+            background-color: rgba(250, 245, 235, 0.9);
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--copper);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--charred-oak);
+            font-size: 4em;
+            margin-bottom: 0;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            border-bottom: 4px solid var(--amber);
+            display: inline-block;
+            padding: 0 30px 5px;
+        }
+        
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--copper);
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+        
+        .day-container {
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .day-header {
+            background-color: var(--charred-oak);
+            color: white;
+            padding: 15px 20px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8em;
+            letter-spacing: 1px;
+        }
+        
+        .timeline-container {
+            padding: 20px;
+            position: relative;
+        }
+        
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 120px;
+            width: 4px;
+            background-color: var(--wheat);
+            border-radius: 2px;
+        }
+        
+        .activity {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .activity:last-child {
+            margin-bottom: 0;
+        }
+        
+        .time {
+            width: 100px;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 40px;
+            color: var(--copper);
+        }
+        
+        .activity::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 114px;
+            top: 5px;
+            background-color: var(--copper);
+            transform: rotate(45deg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .content {
+            flex-grow: 1;
+            padding-left: 40px;
+        }
+        
+        .activity-name {
+            font-weight: bold;
+            color: var(--charred-oak);
+            margin-bottom: 5px;
+        }
+        
+        .activity-type {
+            display: inline-block;
+            font-size: 0.8em;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+            color: white;
+        }
+        
+        .tasting {
+            background-color: var(--amber);
+        }
+        
+        .tour {
+            background-color: var(--copper);
+        }
+        
+        .dining {
+            background-color: var(--caramel);
+        }
+        
+        .lodging {
+            background-color: #5d8aa8;
+        }
+        
+        .travel {
+            background-color: #5c8a57;
+        }
+        
+        .notes-section {
+            background-color: rgba(245, 222, 179, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 40px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .notes-title {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--charred-oak);
+            font-size: 1.8em;
+            margin-top: 0;
+            border-bottom: 2px solid var(--amber);
+            padding-bottom: 5px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        li::before {
+            content: '•';
+            color: var(--copper);
+            font-size: 1.5em;
+            position: absolute;
+            left: 5px;
+            top: -5px;
+        }
+        
+        footer {
+            text-align: center;
+            font-style: italic;
+            margin-top: 40px;
+            color: var(--copper);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .bourbon-bottle {
+            position: absolute;
+            right: 20px;
+            bottom: -70px;
+            width: 50px;
+            height: 120px;
+            opacity: 0.8;
+            z-index: 1;
+        }
+        
+        .address {
+            font-size: 0.9em;
+            color: #555;
+            margin: 5px 0;
+        }
+        
+        .travel-info {
+            font-size: 0.85em;
+            color: #777;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        
+        .depart-time {
+            font-size: 0.9em;
+            color: #5c8a57;
+            font-weight: bold;
+            margin-top: 8px;
+            border-top: 1px dashed #ccc;
+            padding-top: 5px;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background-image: none;
+                background-color: white;
+            }
+            
+            .container {
+                padding: 0;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            h1 {
+                font-size: 3em;
+            }
+            
+            .day-container {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            .day-header {
+                padding: 10px 15px;
+            }
+            
+            .timeline-container {
+                padding: 15px;
+            }
+            
+            .notes-section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 3em;
+                padding: 0 15px 5px;
+            }
+            
+            .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .timeline-container::before {
+                left: 80px;
+            }
+            
+            .time {
+                width: 70px;
+                padding-right: 20px;
+                font-size: 0.9em;
+            }
+            
+            .activity::after {
+                left: 74px;
+                width: 12px;
+                height: 12px;
+            }
+            
+            .content {
+                padding-left: 30px;
+            }
+
+            .activity-name {
+                font-size: 0.95em;
+            }
+        }
+
+        /* Interactive elements */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted #555;
+            cursor: help;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.8em;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Button styles */
+        .action-button {
+            background-color: var(--copper);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-family: 'Bitter', serif;
+            font-size: 0.9em;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: var(--charred-oak);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>KENTUCKY BOURBON TRAIL</h1>
+            <div class="subtitle">A Winter Bourbon Adventure - January 2026</div>
+            <div style="text-align: center; margin-top: 15px; font-family: 'Bitter', serif;">
+                <strong>Bourbon Stewards:</strong> Matt, Joey, Lance, Stan, Brandon, Rob
+            </div>
+        </header>
+        
+        <div class="day-container">
+            <div class="day-header">Thursday, January 16</div>
+            <div class="timeline-container">
+                <div class="activity">
+                    <div class="time">5:30 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Depart from Webster's Chapel, Alabama</div>
+                        <span class="activity-type travel">Travel</span>
+                        <p>Begin your journey to Kentucky from your home in Alabama.</p>
+                        <div class="address">
+                            <strong>Starting Address:</strong> 431 New Liberty Rd, Wellington, AL 36279
+                        </div>
+                        <div class="travel-info">
+                            Approximately 6 hours drive (380 miles) to Frankfort, KY
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">11:30 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Check-in at Home2 Suites Frankfort</div>
+                        <span class="activity-type lodging">Lodging</span>
+                        <p>Get settled in for the night before starting your bourbon adventure.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 105 Limestone Dr, Frankfort, KY 40601<br>
+                            <strong>Phone:</strong> (502) 209-1115
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-container">
+            <div class="day-header">Friday, January 17</div>
+            <div class="timeline-container">
+                <div class="activity">
+                    <div class="time">8:30 AM</div>
+                    <div class="content">
+                        <div class="activity-name">Buffalo Trace Distillery</div>
+                        <span class="activity-type tasting">Tasting</span>
+                        <p>Home to some of the world's most coveted bourbons, including Pappy Van Winkle and the Antique Collection.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 113 Great Buffalo Trace, Frankfort, KY 40601<br>
+                            <strong>Phone:</strong> (502) 696-5926<br>
+                            <strong>Website:</strong> buffalotracedistillery.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Home2 Suites Frankfort - 10 minutes drive (3.5 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for next location by:</strong> 10:15 AM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">10:30 AM</div>
+                    <div class="content">
+                        <div class="activity-name">Castle & Key Distillery</div>
+                        <span class="activity-type tasting">Tasting</span>
+                        <p>Located in the historic Old Taylor Distillery, featuring beautiful castle-like architecture.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 4445 McCracken Pike, Frankfort, KY 40601<br>
+                            <strong>Phone:</strong> (502) 395-9070<br>
+                            <strong>Website:</strong> castleandkey.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Buffalo Trace Distillery - 15 minutes drive (8 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for next location by:</strong> 12:10 PM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">12:30 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Whisky Thief Distilling Co.</div>
+                        <span class="activity-type tasting">Tasting</span>
+                        <p>Innovative craft distillery focusing on unique flavor profiles and single-barrel experiences.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 283 Crab Orchard Rd, Frankfort, KY 40601<br>
+                            <strong>Phone:</strong> (502) 552-1001<br>
+                            <strong>Website:</strong> whiskeythief.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Castle & Key Distillery - 20 minutes drive (12 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for next location by:</strong> 1:15 PM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">1:30 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Lunch at Bourbon on Main</div>
+                        <span class="activity-type dining">Dining</span>
+                        <p>Enjoy Southern cuisine with bourbon-inspired dishes in historic downtown Frankfort.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 103 W Main St, Frankfort, KY 40601<br>
+                            <strong>Phone:</strong> (502) 352-2720<br>
+                            <strong>Website:</strong> bourbononmain.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Whisky Thief Distilling Co. - 15 minutes drive (7 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for next location by:</strong> 2:50 PM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">3:00 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Larrikin Bourbon Company</div>
+                        <span class="activity-type tasting">Tasting</span>
+                        <p>Boutique distillery known for small-batch production methods.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 121 Diagnostic Dr, Frankfort, KY 40601<br>
+                            <strong>Phone:</strong> (502) 219-3550<br>
+                            <strong>Website:</strong> larrikinspirits.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Bourbon on Main - 10 minutes drive (4 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for next location by:</strong> 3:15 PM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">4:30 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Maker's Mark Distillery</div>
+                        <span class="activity-type tour">Tour</span>
+                        <p>Famous for its distinctive red wax-sealed bottles and wheated bourbon recipe.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 3350 Burks Spring Rd, Loretto, KY 40037<br>
+                            <strong>Phone:</strong> (270) 865-2099<br>
+                            <strong>Website:</strong> makersmark.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Larrikin Bourbon Company - 1 hour 15 minutes drive (60 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for next location by:</strong> 6:00 PM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">6:30 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Dinner in Downtown Bardstown</div>
+                        <span class="activity-type dining">Dining</span>
+                        <p>Explore dining options in the "Bourbon Capital of the World."</p>
+                        <div class="address">
+                            <strong>Recommended:</strong> The Rickhouse Restaurant & Lounge<br>
+                            <strong>Address:</strong> 112 Xavier Dr, Bardstown, KY 40004<br>
+                            <strong>Phone:</strong> (502) 348-2532
+                        </div>
+                        <div class="travel-info">
+                            Depart from Maker's Mark Distillery - 30 minutes drive (20 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for next location by:</strong> 8:15 PM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">8:30 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Check in at The Black Swan on 5th</div>
+                        <span class="activity-type lodging">Lodging</span>
+                        <p>A beautiful historic accommodation in downtown Bardstown.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 105 South 5th Street, Bardstown, Kentucky 40004<br>
+                            <strong>Phone:</strong> (502) 233-1761<br>
+                            <strong>Website:</strong> theblackswanon5th.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Downtown Bardstown - 5 minutes drive or walking distance
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-container">
+            <div class="day-header">Saturday, January 18</div>
+            <div class="timeline-container">
+                <div class="activity">
+                    <div class="time">9:00 AM</div>
+                    <div class="content">
+                        <div class="activity-name">Heaven Hill Bourbon Experience</div>
+                        <span class="activity-type tour">Bottle Your Own Tour</span>
+                        <p>Create your own unique bottled bourbon to take home as a souvenir.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 1311 Gilkey Run Rd, Bardstown, KY 40004<br>
+                            <strong>Phone:</strong> (502) 337-1000<br>
+                            <strong>Website:</strong> heavenhilldistillery.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from The Black Swan on 5th - 5 minutes drive (1.5 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart from lodging by:</strong> 8:45 AM<br>
+                            <strong>Depart for next location by:</strong> 10:45 AM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">11:00 AM</div>
+                    <div class="content">
+                        <div class="activity-name">Bardstown Bourbon Company</div>
+                        <span class="activity-type tasting">Tasting</span>
+                        <p>Modern distillery with collaborative bourbon-making programs.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 1500 Parkway Dr, Bardstown, KY 40004<br>
+                            <strong>Phone:</strong> (502) 233-4769<br>
+                            <strong>Website:</strong> bardstownbourbon.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Heaven Hill Bourbon Experience - 10 minutes drive (4 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Stay for lunch at the on-site restaurant</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">12:30 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Lunch at Bardstown Bourbon Company</div>
+                        <span class="activity-type dining">Dining</span>
+                        <p>Farm-to-table cuisine at their on-site restaurant.</p>
+                        <div class="address">
+                            <strong>Restaurant:</strong> The Kitchen & Bar at Bardstown Bourbon Company<br>
+                            <strong>Address:</strong> 1500 Parkway Dr, Bardstown, KY 40004<br>
+                            <strong>Phone:</strong> (502) 233-4769
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for next location by:</strong> 1:15 PM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">2:00 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Four Roses Distillery</div>
+                        <span class="activity-type tasting">Tasting</span>
+                        <p>Known for their Spanish Mission-style architecture and 10 distinct bourbon recipes.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 1224 Bonds Mill Rd, Lawrenceburg, KY 40342<br>
+                            <strong>Phone:</strong> (502) 839-3436<br>
+                            <strong>Website:</strong> fourrosesbourbon.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Bardstown Bourbon Company - 45 minutes drive (35 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for next location by:</strong> 3:15 PM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">3:30 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Wild Turkey Distillery</div>
+                        <span class="activity-type tasting">Tasting</span>
+                        <p>Home to legendary Master Distillers Jimmy and Eddie Russell.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 1417 Versailles Rd, Lawrenceburg, KY 40342<br>
+                            <strong>Phone:</strong> (502) 839-4544<br>
+                            <strong>Website:</strong> wildturkeybourbon.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Four Roses Distillery - 15 minutes drive (8 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for next location by:</strong> 4:30 PM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">5:00 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Woodford Reserve</div>
+                        <span class="activity-type tour">Tour</span>
+                        <p>Historic distillery known for its copper pot stills and triple distillation process.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 7855 McCracken Pike, Versailles, KY 40383<br>
+                            <strong>Phone:</strong> (859) 879-1812<br>
+                            <strong>Website:</strong> woodfordreserve.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Wild Turkey Distillery - 30 minutes drive (15 miles)
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for next location by:</strong> 6:30 PM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">7:30 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Dinner at The Rick House</div>
+                        <span class="activity-type dining">Dining</span>
+                        <p>Upscale dining in Bardstown with an extensive bourbon selection.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 112 Xavier Dr, Bardstown, KY 40004<br>
+                            <strong>Phone:</strong> (502) 348-2532<br>
+                            <strong>Website:</strong> therickhouse.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from Woodford Reserve - 1 hour drive (45 miles) back to Bardstown
+                        </div>
+                        <div class="depart-time">
+                            <strong>Depart for lodging by:</strong> 9:15 PM
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="time">9:30 PM</div>
+                    <div class="content">
+                        <div class="activity-name">Return to The Black Swan on 5th</div>
+                        <span class="activity-type lodging">Lodging</span>
+                        <p>Return to your lodging for the night after a full day of bourbon adventures.</p>
+                        <div class="address">
+                            <strong>Address:</strong> 105 South 5th Street, Bardstown, Kentucky 40004<br>
+                            <strong>Phone:</strong> (502) 233-1761<br>
+                            <strong>Website:</strong> theblackswanon5th.com
+                        </div>
+                        <div class="travel-info">
+                            Depart from The Rick House - 5 minutes drive (1 mile) or walking distance
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <h2 class="notes-title">Traveler's Notes</h2>
+            <ul>
+                <li>Remember to drink responsibly and consider a designated driver or tour service for each day's activities.</li>
+                <li>Tours should be booked in advance as many distilleries are very popular, especially on weekends.</li>
+                <li>January weather in Kentucky can be unpredictable - pack layers and check forecasts before heading out each day.</li>
+                <li>Most distilleries offer non-alcoholic options for designated drivers.</li>
+                <li>Take your time at each location to fully appreciate the craftsmanship and history.</li>
+                <li>Consider bringing a small notebook to record tasting notes and preferences.</li>
+                <li>Most distilleries have gift shops where you can purchase bottles and souvenirs.</li>
+                <li>With 6 Bourbon Stewards traveling, consider vehicle logistics - either two cars or a larger SUV/van for the group.</li>
+                <li>Travel from Webster's Chapel, AL to Frankfort, KY: approximately 6 hours (380 miles).</li>
+                <li>Total driving for Friday: approximately 2 hours 30 minutes (95 miles).</li>
+                <li>Total driving for Saturday: approximately 3 hours 45 minutes (105 miles).</li>
+            </ul>
+            <svg class="bourbon-bottle" viewBox="0 0 100 250" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40,10 L60,10 L65,30 L35,30 Z" fill="#6b3d10"/>
+                <path d="M38,30 L62,30 L65,40 C65,40 70,80 70,120 C70,170 65,220 60,240 C58,248 42,248 40,240 C35,220 30,170 30,120 C30,80 35,40 35,40 Z" fill="#6b3d10"/>
+                <rect x="45" y="0" width="10" height="10" fill="#6b3d10"/>
+                <path d="M35,40 L65,40 C65,40 60,60 50,60 C40,60 35,40 35,40 Z" fill="#c27a2c" opacity="0.5"/>
+                <path d="M35,100 L65,100 C65,100 60,120 50,120 C40,120 35,100 35,100 Z" fill="#c27a2c" opacity="0.5"/>
+                <path d="M35,160 L65,160 C65,160 60,180 50,180 C40,180 35,160 35,160 Z" fill="#c27a2c" opacity="0.5"/>
+                <path d="M35,220 L65,220 C65,220 60,235 50,235 C40,235 35,220 35,220 Z" fill="#c27a2c" opacity="0.5"/>
+            </svg>
+        </div>
+        
+        <footer>
+            Sláinte to Your Kentucky Bourbon Trail Adventure!
+        </footer>
+    </div>
+</body>
+</html>
